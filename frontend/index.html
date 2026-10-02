@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HotelFinder te garantiza la tarifa oficial más baja en Klook y acumula créditos de lealtad en cada reserva para canjear por Tarjetas Regalo y Vouchers. Extensión gratuita para Chrome.">
+    <meta name="keywords" content="hotel, cashback, klook, tarjetas regalo, extensión Chrome, reserva de hotel, fidelización, viajes">
+    <meta name="author" content="HotelFinder">
+    <link rel="icon" type="image/png" href="assets/logo_icon.png">
+    <title>HotelFinder - Tarifa Oficial Garantizada y Créditos de Viaje</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="assets/logo_icon.png" alt="HotelFinder Icon" class="logo-icon">
+            <span class="logo-text">Hotel<span>Finder</span></span>
+        </div>
+        <nav class="nav-links">
+            <a href="#como-funciona">Cómo funciona</a>
+            <a href="#recompensas">Recompensas</a>
+            <a href="#caracteristicas">Garantía</a>
+            <a href="privacy.html">Privacidad</a>
+            <a href="mailto:soporte.hotelfinder@gmail.com">Contacto</a>
+        </nav>
+        <button class="btn-primary small nav-cta" id="nav-install-btn" aria-label="Agregar extensión a Chrome">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="4"></circle>
+                <line x1="21.17" y1="8" x2="12" y2="8"></line>
+                <line x1="3.95" y1="6.06" x2="8.54" y2="14"></line>
+                <line x1="10.88" y1="21.94" x2="15.46" y2="14"></line>
+            </svg>
+            Agregar a Chrome
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-container">
+                <!-- Left Content -->
+                <div class="hero-content">
+                    <div class="hero-badge" style="display:inline-flex; align-items:center; gap:6px; background:rgba(16, 185, 129, 0.15); border:1px solid rgba(16, 185, 129, 0.4); color:#10B981; padding:5px 14px; border-radius:20px; font-size:12px; font-weight:700; margin-bottom:14px; backdrop-filter:blur(4px);">
+                        🛡️ Socio Oficial Verificado &bull; Klook
+                    </div>
+                    <h1>Reserva hoteles con tarifa oficial, <br><span class="highlight">acumula créditos y tarjetas regalo.</span></h1>
+                    <p class="hero-subtitle">HotelFinder es tu copiloto inteligente de viajes. Garantizamos la tarifa oficial más baja en Klook y te premiamos con un <strong>1.5% en créditos acumulables</strong> para canjear por Tarjetas Regalo y cupones en tus próximas escapadas.</p>
+                    
+                    <div class="rating">
+                        <div class="stars">
+                            <svg viewBox="0 0 24 24" fill="#10B981"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg viewBox="0 0 24 24" fill="#10B981"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg viewBox="0 0 24 24" fill="#10B981"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg viewBox="0 0 24 24" fill="#10B981"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg viewBox="0 0 24 24" fill="#10B981"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <span>4.8/5 en Chrome Web Store</span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <button class="btn-primary" id="hero-install-btn" aria-label="Agregar extensión a Chrome">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line></svg>
+                            Agregar a Chrome Gratis
+                        </button>
+                        <a href="#como-funciona" class="btn-secondary" style="text-decoration:none;">
+                            Ver cómo funciona &darr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content (Mockup Card with Milestone Ladder) -->
+                <div class="hero-mockup">
+                    <div class="floating-icon">
+                        <img src="assets/logo_icon.png" alt="Icon">
+                    </div>
+                    <div class="mockup-card">
+                        <div class="mock-header">
+                            <div class="mock-logo">
+                                <img src="assets/logo_icon.png" alt="Icon" class="logo-icon-small">
+                                <span class="logo-text-small">Hotel<span>Finder</span></span>
+                            </div>
+                            <span class="shield-badge-small" style="font-size:10px; background:#D1FAE5; color:#065F46; padding:2px 6px; border-radius:10px; font-weight:bold;">🛡️ Verificado</span>
+                        </div>
+
+                        <!-- Milestone Progress Component -->
+                        <div style="background:#F0F9FF; border:1px solid #BAE6FD; border-radius:8px; padding:10px; margin: 10px 0;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                                <span style="font-size:11px; color:#0369A1; font-weight:bold;">Tus Créditos Acumulados</span>
+                                <span style="font-size:10px; background:#E0F2FE; color:#0284C7; font-weight:bold; padding:2px 6px; border-radius:4px;">Meta: $3 USD</span>
+                            </div>
+                            <div style="font-size:18px; font-weight:800; color:#0284C7; margin-bottom:6px;">$2.45 USD</div>
+                            <div style="width:100%; height:6px; background:#CBD5E1; border-radius:3px; overflow:hidden;">
+                                <div style="width:82%; height:100%; background:#10B981; border-radius:3px;"></div>
+                            </div>
+                            <div style="font-size:10px; color:#64748B; margin-top:4px; display:flex; justify-content:space-between;">
+                                <span>Faltan $0.55 USD para tu Cupón</span>
+                                <span>82%</span>
+                            </div>
+                        </div>
+
+                        <div class="hotel-mock-info">
+                            <div class="hmi-title">Hilton Bogotá Corferias</div>
+                            <div class="hmi-meta">Tarifa oficial en Klook: 120,00 €</div>
+                        </div>
+
+                        <div class="pricing-box" style="margin-top:6px;">
+                            <div class="price-row" style="background:#ECFDF5; padding:6px 8px; border-radius:6px; border:1px solid #A7F3D0;">
+                                <span style="font-size:11px; color:#065F46; font-weight:bold;">🎁 Créditos por esta reserva:</span>
+                                <span style="font-size:12px; color:#10B981; font-weight:800;">+1,80 € (1.5%)</span>
+                            </div>
+                        </div>
+
+                        <button class="btn-primary mock-btn" style="margin-top:10px; background:#10B981;">
+                            🔒 Reservar y Acumular Créditos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cómo Funciona Section -->
+        <section id="como-funciona" class="how-it-works">
+            <div class="hiw-container">
+                <h2>Cómo funciona en 3 simples pasos</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Instala la extensión</h3>
+                        <p>Agrégala a Chrome en segundos. 100% gratuita y sin registros obligatorios.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Reserva en Klook</h3>
+                        <p>Al explorar alojamientos y actividades, HotelFinder verifica tu tarifa oficial y activa tu 1.5% de créditos.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Canjea Tarjetas Regalo</h3>
+                        <p>Alcanza las metas de $3, $10 o $25 USD y canjea tus créditos por Tarjetas Regalo Klook Oficiales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Escalera de Recompensas (Dark Glassmorphism Theme) -->
+        <section id="recompensas" class="how-it-works rewards-section">
+            <div class="hiw-container">
+                <h2>Escalera de Recompensas y Metas de Desbloqueo</h2>
+                <p class="section-subtitle">
+                    Tus créditos crecen con cada estancia completada. Desbloquea tus tarjetas de regalo a tu propio ritmo:
+                </p>
+                <div class="steps-grid">
+                    <div class="step reward-card tier-1">
+                        <div class="step-number tier-badge-1">1</div>
+                        <h3>Meta $3.00 USD</h3>
+                        <p class="reward-title">Cupón Klook $3 USD</p>
+                        <p class="reward-desc">Alcanzable con tu 1ra o 2da reserva. ¡Incentivo rápido para tu próximo tour o actividad!</p>
+                    </div>
+                    <div class="step reward-card tier-2">
+                        <div class="step-number tier-badge-2">2</div>
+                        <h3>Meta $10.00 USD</h3>
+                        <p class="reward-title">Tarjeta Regalo Klook $10 USD</p>
+                        <p class="reward-desc">Para viajeros habituales. Canjeable directamente en el checkout de tus siguientes hoteles.</p>
+                    </div>
+                    <div class="step reward-card tier-3">
+                        <div class="step-number tier-badge-3">3</div>
+                        <h3>Meta $25.00 USD</h3>
+                        <p class="reward-title">Tarjeta Regalo Klook $25 USD</p>
+                        <p class="reward-desc">Nivel VIP para estancias largas, escapadas familiares y reservas grupales.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Banner -->
+        <section id="caracteristicas" class="features-banner">
+            <div class="feature">
+                <div class="feature-icon check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="feature-text">
+                    <h4>100% HONESTO</h4>
+                    <p>Cero precios inventados ni cupones falsos. Siempre ves la tarifa oficial real.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon lightning">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <div class="feature-text">
+                    <h4>SIN REGISTRO OBLIGATORIO</h4>
+                    <p>Acumulas créditos desde el primer clic con tu identificador anónimo seguro.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                </div>
+                <div class="feature-text">
+                    <h4>TARJETAS OFICIALES</h4>
+                    <p>Tus créditos se canjean por códigos legítimos para aplicar en Klook.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon heart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </div>
+                <div class="feature-text">
+                    <h4>GRATIS PARA SIEMPRE</h4>
+                    <p>La extensión nunca te cobrará comisiones ni tarifas de membresía.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 HotelFinder. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Política de Privacidad y Términos</a>
+                <a href="mailto:soporte.hotelfinder@gmail.com">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="comingSoonModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h2>¡Próximamente en Chrome Web Store!</h2>
+            <p>HotelFinder está finalizando su proceso de publicación oficial en la Chrome Web Store. Muy pronto estará disponible para instalar en un clic.</p>
+            <div class="modal-action">
+                <button class="btn-primary" onclick="document.getElementById('comingSoonModal').style.display='none'">Entendido</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

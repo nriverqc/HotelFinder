@@ -1,0 +1,37 @@
+{
+  "tables": {
+    "users": [
+      {
+        "id": 1,
+        "device_token": "device_token_abc123",
+        "email": "usuario.viajero@gmail.com",
+        "balance_pending_usd": 15,
+        "balance_confirmed_usd": 0,
+        "created_at": "2026-08-04T23:12:09.129Z"
+      },
+      {
+        "id": 2,
+        "device_token": "device_token_xyz999",
+        "email": "usuario.viajero@gmail.com",
+        "balance_pending_usd": 15,
+        "balance_confirmed_usd": 0,
+        "created_at": "2026-08-04T23:12:09.136Z"
+      }
+    ],
+    "cashback_records": [
+      {
+        "id": 1,
+        "user_id": 2,
+        "device_token": "device_token_xyz999",
+        "email": "usuario.viajero@gmail.com",
+        "hotel_name": "Grand Hyatt Cancún",
+        "room_name": "Suite Vista al Mar",
+        "booking_usd": 600,
+        "cashback_usd": 15,
+        "status": "PENDING",
+        "note": "Saldo pendiente de confirmación tras la estancia",
+        "created_at": "2026-08-04T23:12:09.133Z"
+      }
+    ]
+  }
+}

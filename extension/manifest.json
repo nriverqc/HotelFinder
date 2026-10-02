@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "HotelFinder - Hoteles Baratos",
+  "version": "1.1.0",
+  "description": "Encuentra la tarifa más barata para tu hotel. Compara precios en segundos y obtén cashback en tus reservas.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.booking.com/*",
+    "*://*.expedia.com/*",
+    "*://*.klook.com/*"
+  ],
+  "icons": {
+    "16": "ui/assets/logo_icon.png",
+    "48": "ui/assets/logo_icon.png",
+    "128": "ui/assets/logo_icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.booking.com/*",
+        "*://*.expedia.com/*",
+        "*://*.klook.com/*"
+      ],
+      "js": ["content_script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "ui/popup.html",
+    "default_icon": {
+      "16": "ui/assets/logo_icon.png",
+      "48": "ui/assets/logo_icon.png",
+      "128": "ui/assets/logo_icon.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HotelFinder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="assets/logo_icon.png" alt="HotelFinder Icon" class="logo-icon">
+      <div class="logo-text">Hotel<span>Finder</span></div>
+    </div>
+    <div class="header-actions">
+      <div class="shield-badge">🛡️ Copiloto Activo</div>
+    </div>
+  </header>
+
+  <!-- Milestone Progress Card (Always visible on supported provider sites) -->
+  <div class="milestone-box" id="milestone-box">
+    <div class="milestone-top">
+      <div class="milestone-balance-col">
+        <span class="milestone-sub">Tus Créditos Acumulados</span>
+        <span class="milestone-balance" id="ui-balance-val">$0.00 USD</span>
+      </div>
+      <div class="milestone-tier-badge" id="ui-tier-badge">Meta 1: $3.00</div>
+    </div>
+    <div class="progress-track">
+      <div class="progress-bar" id="ui-progress-bar" style="width: 0%;"></div>
+    </div>
+    <div class="milestone-footer">
+      <span id="ui-milestone-text">Faltan $3.00 USD para tu Cupón Klook</span>
+      <span id="ui-milestone-percent" style="font-weight:700;">0%</span>
+    </div>
+    <button class="btn-claim hidden" id="btn-claim-reward">
+      🎁 ¡Meta Alcanzada! Reclamar Tarjeta Regalo
+    </button>
+  </div>
+
+  <!-- Claim Modal (When user clicks Reclamar Tarjeta) -->
+  <div class="claim-modal hidden" id="claim-modal">
+    <div class="claim-modal-content">
+      <h4 id="claim-modal-title">🎁 Reclamar Tarjeta Regalo</h4>
+      <p id="claim-modal-desc">Ingresa tu correo para enviarte tu código oficial de Klook.</p>
+      <input type="email" id="claim-email-input" class="claim-input" placeholder="tu-email@ejemplo.com" />
+      <div class="claim-actions">
+        <button class="btn-secondary" id="btn-cancel-claim">Cancelar</button>
+        <button class="btn-primary" id="btn-submit-claim" style="padding:8px 12px; font-size:12px;">Confirmar Envío</button>
+      </div>
+      <div id="claim-feedback" class="claim-feedback hidden"></div>
+    </div>
+  </div>
+
+  <!-- State 1: Active Hotel Detail (When browsing a specific hotel on Klook) -->
+  <main class="content hidden" id="hotel-content">
+    
+    <!-- Success / Benefit Banner -->
+    <div class="success-banner" id="popup-success-banner">
+      <div class="success-icon" id="banner-icon-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+      </div>
+      <div class="success-text-container">
+        <h3 id="popup-banner-title">Tarifa Oficial Verificada</h3>
+        <p id="popup-banner-desc">Acumulas créditos para tu próxima estancia</p>
+      </div>
+    </div>
+
+    <!-- Hotel Info Header -->
+    <div class="hotel-info">
+      <div class="hotel-header">
+        <div class="hotel-title" id="hotel-name">Cargando alojamiento...</div>
+      </div>
+      <div class="hotel-meta">
+        <div class="meta-item">
+          <span>🏨 Alojamiento Oficial</span>
+        </div>
+        <div class="meta-item" id="hotel-status-tag">
+          <span style="color:#0284C7; font-weight:700;">🎁 +1.5% Créditos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Section (Single Price) -->
+    <div class="pricing-section" id="single-pricing-section">
+      <div class="price-row">
+        <span class="price-label">Tarifa Oficial en Sitio:</span>
+        <span class="price-new" id="price-new">--</span>
+      </div>
+      <div class="price-row" style="margin-top: 8px; background:#F0F9FF; padding:8px 10px; border-radius:6px; border:1px solid #BAE6FD;">
+        <span style="font-size:12px; font-weight:700; color:#0284C7;" id="save-amount-text">🎁 +1.5% en Créditos</span>
+        <span style="font-size:11px; color:#0369A1;" id="save-total">Se confirman tras tu estancia</span>
+      </div>
+    </div>
+
+    <!-- Multi-room options list container -->
+    <div class="rooms-container hidden" id="rooms-container">
+      <div class="rooms-title">Habitaciones Disponibles</div>
+      <div id="rooms-list" class="rooms-list"></div>
+    </div>
+
+    <!-- Primary CTA Button -->
+    <button class="btn-primary" id="btn-offer">
+      🔒 Reservar Tarifa Oficial y Acumular
+    </button>
+  </main>
+
+  <!-- State 2: General Browsing on Klook (e.g. klook.com/es/ home or search) -->
+  <main class="content hidden" id="browsing-state">
+    <div class="provider-card">
+      <div class="provider-header">
+        <span class="provider-icon">🟢</span>
+        <div>
+          <h3 id="browsing-provider-name">Monitoreando Klook</h3>
+          <p>Copiloto de ahorro y créditos activo</p>
+        </div>
+      </div>
+      <div class="provider-body">
+        <p>Estás navegando en nuestro socio oficial. Cuando abras cualquier <strong>hotel, habitación o actividad</strong>, HotelFinder calculará automáticamente tu tarifa oficial más baja y tus créditos acumulables.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- State 3: Other Provider Guidance (e.g. Booking.com / Expedia) -->
+  <main class="content hidden" id="other-provider-state">
+    <div class="provider-card">
+      <div class="provider-header">
+        <span class="provider-icon">⏳</span>
+        <div>
+          <h3 id="other-provider-title">Próximamente en Booking.com</h3>
+          <p>Integración en progreso</p>
+        </div>
+      </div>
+      <div class="provider-body">
+        <p>Estamos trabajando para habilitar la acumulación directa en este proveedor muy pronto. Actualmente, todas tus <strong>tarifas oficiales y créditos de lealtad (+1.5%)</strong> están activos al 100% en nuestro socio oficial <strong>Klook</strong>.</p>
+      </div>
+      <button class="btn-primary" id="btn-go-klook" style="background:#06B6D4; box-shadow:0 4px 12px rgba(6,182,212,0.3);">
+        🏨 Explorar Hoteles en Klook y Ganar Créditos &rarr;
+      </button>
+    </div>
+  </main>
+
+  <!-- State 4: Unsupported Site or Loading -->
+  <div id="loading-state" class="loading-state active">
+    <div class="spinner" id="main-spinner"></div>
+    <h3 id="status-title">Verificando página...</h3>
+    <div id="status">HotelFinder está analizando la pestaña actual.</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    </svg>
+    <span>Garantía Oficial HotelFinder &bull; Socio Activo: Klook</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
